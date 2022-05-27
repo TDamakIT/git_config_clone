@@ -1,0 +1,9 @@
+---
+# tasks file for git_repos_management
+- name: 
+  include_tasks: clone_repo.yml
+  loop: "{{ git_repos }}"
+  
+- name: 
+  include_tasks: config_repo.yml
+  loop: "{{ git_repos }}"

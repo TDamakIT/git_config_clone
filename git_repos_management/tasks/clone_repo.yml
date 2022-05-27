@@ -1,0 +1,14 @@
+- name: Clone repo to the newly created environment
+  git: 
+    repo: https://{{ gituser | urlencode }}:{{ gitpassword | urlencode }}@{{ item.url}}
+    dest: "/home/it/tes_{{trigram}}/{{item.name}}"
+    version: master
+    force: "{{ force_choice }}"
+  no_log: true
+
+- name: Ensure remote URL does not contain credentials
+  git_config:
+    name: remote.origin.url
+    value: https://{{ item.url }}
+    scope: local
+    repo: "/home/it/tes_tda/{{ item.name }}/"

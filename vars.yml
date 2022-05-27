@@ -1,0 +1,15 @@
+git_repos:
+  - name: dockbix-xxl
+    url: github.com/monitoringartist/dockbix-xxl.git
+  - name: kubernetes-zabbix
+    url: github.com/monitoringartist/kubernetes-zabbix.git
+#items_not_to_clone:
+#   - test
+##  - dockbix-xxl
+##  - kubernetes-zabbi
+#full_name: tarek damak
+#trigram: tda
+#email: tarek.damak.it@gmail.com
+#gituser: tdamakit
+#gitpassword: YayareA18
+#force_choice: yes

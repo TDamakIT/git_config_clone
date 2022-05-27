@@ -1,0 +1,30 @@
+---
+- name: Sample playbook for git
+  hosts: localhost
+  connection: local-
+  vars_prompt:
+    - name: items_not_to_clone
+      prompt: Do you have one or multi repos that you don't want to update them? write them in JSON Format [repo1, repo2, repo3]
+      private: no
+    - name: force_choice
+      prompt: Do you want to force update the repos (risk of losing your local updates)?
+      private: no
+    - name: full_name
+      prompt: What is your full name?
+      private: no
+    - name: email
+      prompt: What is your e-mail address?
+      private: no
+    - name: trigram
+      prompt: What is your trigram (tda for Tarek Damak)
+      private: no
+    - name: "gituser" 
+      prompt: "Enter your github username" 
+      private: no 
+    - name: "gitpassword" 
+      prompt: "Enter your github password" 
+      private: yes 
+  gather_facts: False
+  tasks:
+  - name:
+    import_tasks: git_repos_management/tasks/main.yml

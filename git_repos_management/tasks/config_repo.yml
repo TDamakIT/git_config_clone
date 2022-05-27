@@ -1,0 +1,13 @@
+- name: "Set user.name attibute to {{ full_name }}"
+  git_config:
+    name: user.name
+    value: "{{ full_name }}"
+    scope: local
+    repo: "/home/it/tes_tda/{{ item.name }}/"
+
+- name: "Set user.emil attibute to {{ email }}"
+  git_config:
+    name: user.email
+    value: "{{ email }}"
+    scope: local
+    repo: "/home/it/tes_tda/{{ item.name }}"
